@@ -32,7 +32,6 @@ public class SearchProduct extends AppUtil {
 		WebElement firstProduct =driver.findElement(By.xpath("//div[@class='rush-component s-expand-height']//button[contains(text(),'Add to cart')]"));
 		firstProduct.click();
 		
-		
 		WebElement popup = driver.findElement(By.xpath("//div[@class='a-popover-wrapper']//button[contains(text(),'Add to cart')]"));
 		popup.click();
 	}
