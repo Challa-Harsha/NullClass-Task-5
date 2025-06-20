@@ -2,8 +2,6 @@ package commonFunctions;
 
 
 import java.time.Duration;
-
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -20,7 +18,7 @@ public class SearchProduct extends AppUtil {
 
 		// search for a product
 		WebElement searchbox = driver.findElement(By.id("twotabsearchtextbox"));
-		searchbox.sendKeys("bruton shoes");
+		searchbox.sendKeys("shoes");
 		searchbox.sendKeys(Keys.ENTER);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
@@ -34,5 +32,9 @@ public class SearchProduct extends AppUtil {
 		
 		WebElement popup = driver.findElement(By.xpath("//div[@class='a-popover-wrapper']//button[contains(text(),'Add to cart')]"));
 		popup.click();
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		WebElement closealert = driver.findElement(By.xpath("//div[@class='a-popover-wrapper']//button[@class=' a-button-close a-declarative']"));
+		closealert.click();
 	}
 }
